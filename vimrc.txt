@@ -97,7 +97,7 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 " 1 : always
 let g:syntastic_auto_loc_list = 2
-let g:syntastic_c_config_file=".syntastic_c_txdriver_config"
+let g:syntastic_c_config_file=".syntastic_c_config"
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
@@ -109,18 +109,26 @@ nmap <F11> :lclose<CR>
 nmap <F8> :TagbarToggle<CR>
 
 "===== 주석 매크로 =====
-func! CmtOn()    "주석 on ctrl+c
+func! CmtOn_v1()    "주석\\  on ctrl+c
     exe "'<,'>norm i//"
 endfunc
 
-func! CmtOff()    "주석 off ctrl+x
+func! CmtOff()    "주석 \\ off ctrl+x
     exe "'<,'>norm 2x"
 endfunc
 
-vmap <c-c> <esc>:call CmtOn() <cr>
+func! CmtOn_v2()
+    exe "'<,'>norm i##"
+endfunc
+
+vmap <c-c> <esc>:call CmtOn_v1() <cr>
 vmap <c-x> <esc>:call CmtOff() <cr>
-nmap <c-c> <esc>v:call CmtOn() <cr>
+nmap <c-c> <esc>v:call CmtOn_v1() <cr>
 nmap <c-x> <esc>v:call CmtOff() <cr>
+
+vmap <c-b> <esc>:call CmtOn_v2() <cr>
+nmap <c-b> <esc>v:call CmtOn_v2() <cr>
+
 
 "=== NOTE setting ====
 if has("autocmd")
@@ -134,7 +142,7 @@ endif
 
 
 "-----------------------------------------------
-set tags=./tags,tags,../tags,../../tags,../../../tags,../../../../tags,../../../../../tags
+set tags=./tags,tags,../tags,../../tags,../../../tags,../../../../tags,../../../../../tags,/home/son/git/SKT/TxDriver/src/tags,/usr/src/linux-4.11/fs/jbd2/tags
 "set tags=/home/son/subject/proj1-aab/proj1-aab/tags
 
 
