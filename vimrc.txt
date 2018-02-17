@@ -24,8 +24,8 @@ set showcmd
 set nocompatible
 set ruler
 " backup dirctory : /home/son/.vim/swp_files
-set directory=/home/son/.vim/.swp_files
-set backupdir=/home/son/.vim/.swp_files
+set directory=/home/$USER/.vim/.swp_files
+set backupdir=/home/$USER/.vim/.swp_files
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
