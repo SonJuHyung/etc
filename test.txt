@@ -69,5 +69,3 @@
 -DKBUILD_STR(s)=#s
 -DKBUILD_BASENAME=my-module
 -DKBUILD_MODNAME=my-module
-
-https://docs.google.com/spreadsheets/d/1rBb1bRYkMEXQUP6yppGZjSHUWSJnbpi8qGQOMq2TaFM/edit?usp=sharing 
